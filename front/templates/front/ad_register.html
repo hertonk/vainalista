@@ -1,318 +1,167 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Anuncie seu imóvel no VaiNaLista. Dê visibilidade ao seu anúncio com diferentes planos."
-    />
-    <title>Anuncie seu Imóvel - VAI NA LISTA - Listou, achou!</title>
+{% include 'front/partials/header.html' %}
 
-    <!-- Importando TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Importando Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
-    <style>
-      /* Logo personalizada */
-      .logo {
-        font-family: "Oswald", sans-serif;
-        font-weight: 700;
-        font-size: 2.5rem;
-      }
-      .focus-visible {
-        outline: 2px solid #fbbf24; /* Amarelo para foco */
-        outline-offset: 2px;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-gradient-to-b from-gray-900 to-black text-white font-sans leading-relaxed tracking-wide"
-  >
-    <!-- Cabeçalho -->
-    <header class="bg-black py-6 shadow-md">
-      <div class="container mx-auto flex flex-col items-center relative">
-        <!-- Logo centralizada -->
-        <h1 class="logo uppercase text-center">Vai&nbsp;Na&nbsp;Lista</h1>
-
-        <!-- Botão "Anuncie seu imóvel" -->
-        <a
-          href="./anunciar-imovel"
-          class="mt-4 bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold shadow-lg hover:bg-yellow-400 transition-all duration-300 md:mt-0 md:absolute md:right-0"
-        >
-          <i class="fas fa-bullhorn mr-2"></i> Anuncie seu imóvel
-        </a>
+<!-- Passos do Processo -->
+<section class="py-12 bg-gray-900">
+  <div class="container mx-auto text-center px-4">
+    <h2 class="text-4xl font-bold uppercase mb-8">Como Funciona?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Passo 1 -->
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-yellow-500 mb-4">
+          1. Cadastre-se
+        </h3>
+        <p class="text-gray-300">Crie sua conta e tenha acesso à plataforma.</p>
       </div>
-    </header>
-
-    <!-- Seção de Planos -->
-    <section class="py-12 bg-gray-900">
-      <div class="container mx-auto text-center px-4">
-        <h2 class="text-4xl font-bold uppercase mb-8">Escolha um Plano</h2>
-        <p
-          class="text-gray-300 text-lg mx-auto max-w-2xl mb-12 leading-relaxed"
-        >
-          Escolha entre nossos planos para dar destaque ao seu imóvel.
+      <!-- Passo 2 -->
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-yellow-500 mb-4">
+          2. Cadastre seu imóvel
+        </h3>
+        <p class="text-gray-300">
+          Informe os dados do seu imóvel passo a passo.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Plano Básico -->
-          <div
-            class="bg-gray-700 hover:scale-105 transition-transform rounded-lg p-6 shadow-lg"
-          >
-            <h4 class="text-lg font-bold text-yellow-500 mb-2">Plano Básico</h4>
-            <p class="text-gray-300 mb-4">
-              Inclui visibilidade normal por 30 dias.
-            </p>
-            <span class="text-yellow-400 font-bold text-xl">R$ 29,90</span>
-          </div>
+      </div>
+      <!-- Passo 3 -->
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-yellow-500 mb-4">
+          3. Escolha o plano
+        </h3>
+        <p class="text-gray-300">
+          Selecione o plano ideal para destacar o seu imóvel e realize o
+          pagamento da taxa.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <!-- Plano Destaque -->
-          <div
-            class="bg-gray-700 hover:scale-105 transition-transform rounded-lg p-6 shadow-lg"
-          >
-            <h4 class="text-lg font-bold text-yellow-500 mb-2">
-              Plano Destaque
-            </h4>
-            <p class="text-gray-300 mb-4">
-              Prioridade alta com destaque visual no site por 60 dias.
-            </p>
-            <span class="text-yellow-400 font-bold text-xl">R$ 59,90</span>
-          </div>
+<!-- Sessão de Anúncio -->
+<section class="py-12 bg-gray-800">
+  <div class="container mx-auto text-center px-4">
+    <h2 class="text-4xl font-bold uppercase mb-8">Faça seu cadastro</h2>
+    <p class="text-gray-300 text-lg mx-auto max-w-2xl mb-8 leading-relaxed">
+      Preencha os dados abaixos e crie sua conta.
+    </p>
 
-          <!-- Plano Premium -->
-          <div
-            class="bg-gray-700 hover:scale-105 transition-transform rounded-lg p-6 shadow-lg"
-          >
-            <h4 class="text-lg font-bold text-yellow-500 mb-2">
-              Plano Premium
-            </h4>
-            <p class="text-gray-300 mb-4">
-              Exposição máxima com destaque em todas as seções por 90 dias.
-            </p>
-            <span class="text-yellow-400 font-bold text-xl">R$ 99,90</span>
-          </div>
+    <!-- Formulário -->
+    <form
+      class="bg-gray-700 p-8 rounded-lg shadow-md max-w-3xl mx-auto text-left"
+    >
+      <!-- Nome -->
+      <div class="mb-6">
+        <label for="name" class="block text-sm font-medium text-gray-300 mb-2"
+          >Nome Completo:</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Seu nome completo"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border"
+        />
+      </div>
+
+      <!-- CPF -->
+      <div class="mb-6">
+        <label for="cpf" class="block text-sm font-medium text-gray-300 mb-2"
+          >CPF:</label
+        >
+        <input
+          type="text"
+          id="cpf"
+          name="cpf"
+          required
+          placeholder="000.000.000-00"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border"
+        />
+      </div>
+
+      <!-- E-mail -->
+      <div class="mb-6">
+        <label for="email" class="block text-sm font-medium text-gray-300 mb-2"
+          >E-mail:</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="seuemail@exemplo.com"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border"
+        />
+      </div>
+
+      <!-- Telefone -->
+      <div class="mb-6">
+        <label for="phone" class="block text-sm font-medium text-gray-300 mb-2"
+          >Telefone:</label
+        >
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          placeholder="(00) 00000-0000"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border"
+        />
+        <div class="mt-2">
+          <input
+            type="checkbox"
+            id="whatsapp"
+            name="whatsapp"
+            value="true"
+            class="mr-2"
+          />
+          <label for="whatsapp" class="text-gray-300 text-sm">
+            Este número é WhatsApp
+          </label>
         </div>
       </div>
-    </section>
 
-    <!-- Sessão de Anúncio -->
-    <section class="py-12 bg-gray-800">
-      <div class="container mx-auto text-center px-4">
-        <h2 class="text-4xl font-bold uppercase mb-8">Anuncie o seu imóvel</h2>
-        <p class="text-gray-300 text-lg mx-auto max-w-2xl mb-8 leading-relaxed">
-          Preencha os detalhes do seu imóvel e escolha o plano que deseja.
-        </p>
-
-        <!-- Formulário -->
-        <form
-          class="bg-gray-700 p-8 rounded-lg shadow-md max-w-3xl mx-auto text-left"
+      <!-- Senha -->
+      <div class="mb-6">
+        <label
+          for="password"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Senha:</label
         >
-          <div class="mb-6">
-            <label
-              for="type"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Tipo do Imóvel:</label
-            >
-            <select
-              id="type"
-              name="type"
-              required
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            >
-              <option>Residencial</option>
-              <option>Comercial</option>
-            </select>
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="category"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Finalidade:</label
-            >
-            <select
-              id="category"
-              name="category"
-              required
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            >
-              <option>Alugar</option>
-              <option>Vender</option>
-            </select>
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="neighborhood"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Bairro:</label
-            >
-            <input
-              type="text"
-              id="neighborhood"
-              name="neighborhood"
-              required
-              placeholder="Exemplo: Centro, Zona Sul"
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="price"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Valor (R$):</label
-            >
-            <input
-              type="number"
-              id="price"
-              name="price"
-              required
-              placeholder="Exemplo: 350000"
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="size"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Tamanho (m²):</label
-            >
-            <input
-              type="number"
-              id="size"
-              name="size"
-              required
-              placeholder="Exemplo: 120"
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="description"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Descrição:</label
-            >
-            <textarea
-              id="description"
-              name="description"
-              rows="4"
-              required
-              placeholder="Inclua detalhes: número de quartos, banheiros, garagem etc."
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            ></textarea>
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="plan"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Escolha o Plano:</label
-            >
-            <select
-              id="plan"
-              name="plan"
-              required
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            >
-              <option value="basic">Plano Básico - R$ 29,90</option>
-              <option value="highlight">Plano Destaque - R$ 59,90</option>
-              <option value="premium">Plano Premium - R$ 99,90</option>
-            </select>
-          </div>
-
-          <!-- Campo para imagem principal -->
-          <div class="mb-6">
-            <label
-              for="main-image"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Imagem Principal do Imóvel:</label
-            >
-            <input
-              type="file"
-              id="main-image"
-              name="main-image"
-              required
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-            <p class="text-gray-400 text-sm mt-2">
-              * Apenas uma imagem no formato JPG, PNG ou GIF.
-            </p>
-          </div>
-
-          <!-- Campos para imagens secundárias -->
-          <div class="mb-6">
-            <label
-              for="secondary-image-1"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Imagem Secundária 1:</label
-            >
-            <input
-              type="file"
-              id="secondary-image-1"
-              name="secondary-image-1"
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-            <p class="text-gray-400 text-sm mt-2">
-              * Suporte para JPG, PNG ou GIF.
-            </p>
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="secondary-image-2"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Imagem Secundária 2:</label
-            >
-            <input
-              type="file"
-              id="secondary-image-2"
-              name="secondary-image-2"
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-            <p class="text-gray-400 text-sm mt-2">
-              * Suporte para JPG, PNG ou GIF.
-            </p>
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="secondary-image-3"
-              class="block text-sm font-medium text-gray-300 mb-2"
-              >Imagem Secundária 3:</label
-            >
-            <input
-              type="file"
-              id="secondary-image-3"
-              name="secondary-image-3"
-              class="bg-gray-800 text-white p-3 rounded-md w-full border"
-            />
-            <p class="text-gray-400 text-sm mt-2">
-              * Suporte para JPG, PNG ou GIF.
-            </p>
-          </div>
-
-          <!-- Botão para Enviar -->
-          <button
-            type="submit"
-            class="w-full bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold shadow-lg hover:bg-yellow-400 transition-all duration-300"
-          >
-            Enviar Anúncio
-          </button>
-        </form>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Senha segura"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border"
+        />
       </div>
-    </section>
 
-    <!-- Rodapé -->
-    <footer class="bg-black text-gray-400 py-6 text-center text-sm">
-      &copy; 2025 VaiNaLista. Todos os direitos reservados.
-    </footer>
-  </body>
-</html>
+      <!-- Confirmação deSenha -->
+      <div class="mb-6">
+        <label
+          for="confirm-password"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Confirmação de Senha:</label
+        >
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+          placeholder="Senha segura"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border"
+        />
+      </div>
+
+      <!-- Botão de Cadastro -->
+      <button
+        type="submit"
+        class="w-full bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold shadow-lg hover:bg-yellow-400 transition-all duration-300"
+      >
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</section>
+
+{% include 'front/partials/footer.html' %}

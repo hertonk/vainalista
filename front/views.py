@@ -15,3 +15,18 @@ def ad_register(request):
 
 def login(request):
     return render(request, 'front/login.html')
+
+def forgot_password(request):
+    return render(request, 'front/forgot_password.html')
+
+def reset_password(request):
+    return render(request, 'front/reset_password.html')
+
+def backoffice_main(request):
+    return render(request, 'front/backoffice/main.html')
+
+def backoffice_edit(request):
+    return render(request, 'front/backoffice/edit.html')
+
+def backoffice_add(request):
+    return render(request, 'front/backoffice/add.html')

@@ -1,0 +1,180 @@
+{% include 'front/backoffice/partials/header.html' %}
+
+<!-- Formulário para Novo Anúncio -->
+<main class="py-16">
+  <div class="container mx-auto px-4">
+    <!-- Título -->
+    <h2 class="text-4xl font-bold uppercase text-center mb-8">
+      Criar Novo Anúncio
+    </h2>
+    <p
+      class="text-gray-300 text-center text-lg mb-8 max-w-2xl mx-auto leading-relaxed"
+    >
+      Insira as informações do seu imóvel e escolha o plano de destaque para
+      atingir mais interessados.
+    </p>
+
+    <!-- Formulário -->
+    <form
+      action="#"
+      method="post"
+      class="bg-gray-700 p-8 rounded-lg shadow-lg max-w-3xl mx-auto"
+    >
+      <!-- Campo: Título do Imóvel -->
+      <div class="mb-6">
+        <label for="titulo" class="block text-sm font-medium text-gray-300 mb-2"
+          >Título do Imóvel:</label
+        >
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          required
+          placeholder="Ex: Apartamento no Centro"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        />
+      </div>
+
+      <!-- Campo: Descrição -->
+      <div class="mb-6">
+        <label
+          for="descricao"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Descrição do Imóvel:</label
+        >
+        <textarea
+          id="descricao"
+          name="descricao"
+          rows="6"
+          required
+          placeholder="Descreva seu imóvel de forma detalhada."
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        ></textarea>
+      </div>
+
+      <!-- Campo: Preço -->
+      <div class="mb-6">
+        <label for="preco" class="block text-sm font-medium text-gray-300 mb-2"
+          >Preço (R$):</label
+        >
+        <input
+          type="number"
+          id="preco"
+          name="preco"
+          required
+          placeholder="Ex: 350000"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        />
+      </div>
+
+      <!-- Campo: Categoria -->
+      <div class="mb-6">
+        <label
+          for="categoria"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Categoria:</label
+        >
+        <select
+          id="categoria"
+          name="categoria"
+          required
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        >
+          <option value="apartamento">Apartamento</option>
+          <option value="casa">Casa</option>
+          <option value="comercial">Imóvel Comercial</option>
+          <option value="terreno">Terreno</option>
+        </select>
+      </div>
+
+      <!-- Campo: Endereço -->
+      <div class="mb-6">
+        <label
+          for="endereco"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Endereço:</label
+        >
+        <input
+          type="text"
+          id="endereco"
+          name="endereco"
+          required
+          placeholder="Ex: Rua Principal, 123 - Centro"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        />
+      </div>
+
+      <!-- Seção: Planos -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-bold text-yellow-500 mb-4">
+          Escolha seu Plano:
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Plano Básico -->
+          <label
+            class="block bg-gray-800 p-6 rounded-lg border border-gray-600 shadow-md cursor-pointer hover:shadow-lg hover:border-yellow-500 transition-all"
+          >
+            <input
+              type="radio"
+              name="plano"
+              value="basico"
+              class="mr-2"
+              required
+            />
+            <h4 class="text-xl font-bold text-yellow-500">Básico</h4>
+            <p class="text-sm text-gray-400 mt-2">
+              Inclui 15 dias de exibição simples na plataforma.
+            </p>
+            <p class="text-lg font-bold text-white mt-4">R$ 49,90</p>
+          </label>
+
+          <!-- Plano Destaque -->
+          <label
+            class="block bg-gray-800 p-6 rounded-lg border border-gray-600 shadow-md cursor-pointer hover:shadow-lg hover:border-yellow-500 transition-all"
+          >
+            <input
+              type="radio"
+              name="plano"
+              value="destaque"
+              class="mr-2"
+              required
+            />
+            <h4 class="text-xl font-bold text-yellow-500">Destaque</h4>
+            <p class="text-sm text-gray-400 mt-2">
+              Inclui 30 dias de exibição com destaque nas buscas.
+            </p>
+            <p class="text-lg font-bold text-white mt-4">R$ 99,90</p>
+          </label>
+
+          <!-- Plano Premium -->
+          <label
+            class="block bg-gray-800 p-6 rounded-lg border border-gray-600 shadow-md cursor-pointer hover:shadow-lg hover:border-yellow-500 transition-all"
+          >
+            <input
+              type="radio"
+              name="plano"
+              value="premium"
+              class="mr-2"
+              required
+            />
+            <h4 class="text-xl font-bold text-yellow-500">Premium</h4>
+            <p class="text-sm text-gray-400 mt-2">
+              Inclui 60 dias de exibição com prioridade máxima nas buscas e
+              destaques visuais.
+            </p>
+            <p class="text-lg font-bold text-white mt-4">R$ 149,90</p>
+          </label>
+        </div>
+      </div>
+
+      <!-- Botão de Criação -->
+      <button
+        type="submit"
+        class="w-full bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold shadow-lg hover:bg-yellow-400 transition-all duration-300"
+      >
+        Publicar Anúncio
+      </button>
+    </form>
+  </div>
+</main>
+{% include 'front/backoffice/partials/footer.html' %}

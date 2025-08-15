@@ -1,160 +1,84 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Detalhes do imóvel no VaiNaLista." />
-    <title>Detalhes do Imóvel - VAI NA LISTA - Listou, achou!</title>
+{% include 'front/partials/header.html' %}
 
-    <!-- Importando TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Importando Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-
-    <style>
-      .logo {
-        font-family: "Oswald", sans-serif;
-        font-weight: 700;
-        font-size: 2.5rem;
-      }
-
-      .flag {
-        display: inline-block;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.75rem;
-        font-weight: bold;
-        border-radius: 4px;
-        margin-right: 0.5rem;
-      }
-
-      .flag-aluguel {
-        background-color: #3b82f6;
-        color: white;
-      }
-
-      .flag-venda {
-        background-color: #dc2626;
-        color: white;
-      }
-
-      .flag-residencial {
-        background-color: #16a34a;
-        color: white;
-      }
-
-      .flag-comercial {
-        background-color: #f59e0b;
-        color: black;
-      }
-
-      .tag {
-        padding: 0.25rem 0.75rem;
-        background-color: #4b5563;
-        border-radius: 9999px;
-        color: white;
-        font-size: 0.8rem;
-        font-weight: bold;
-        margin-right: 0.25rem;
-      }
-    </style>
-  </head>
-  <body class="bg-black text-white">
-    <!-- Cabeçalho -->
-    <header class="bg-black py-6 shadow-md">
-      <div class="container mx-auto text-center">
-        <h1 class="logo uppercase">Vai&nbsp;Na&nbsp;Lista</h1>
+<!-- Conteúdo Principal -->
+<main class="bg-gray-900 py-12">
+  <div class="container mx-auto px-6 lg:px-12">
+    <!-- Título do Imóvel -->
+    <div
+      class="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8"
+    >
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Apartamento Aconchegante - Residencial
+        </h1>
+        <p class="text-gray-400">
+          <i class="fas fa-map-marker-alt"></i> Bairro Centro, Cidade Fictícia
+        </p>
       </div>
-    </header>
+      <div class="mt-4 lg:mt-0">
+        <span class="flag flag-aluguel">ALUGUEL</span>
+        <span class="flag flag-residencial">RESIDENCIAL</span>
+      </div>
+    </div>
 
-    <!-- Conteúdo Principal -->
-    <main class="bg-gray-900 py-12">
-      <div class="container mx-auto px-6 lg:px-12">
-        <!-- Título do Imóvel -->
-        <div
-          class="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8"
+    <!-- Seção Galeria e Informações -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      <!-- Galeria de Imagens -->
+      <div class="lg:col-span-2">
+        <img
+          src="https://via.placeholder.com/700x400"
+          alt="Imagem do Imóvel"
+          class="w-full h-96 object-cover rounded-lg shadow-lg"
+        />
+        <div class="grid grid-cols-3 gap-4 mt-4">
+          <img
+            src="https://via.placeholder.com/150x100"
+            alt="Imagem 2"
+            class="w-full h-24 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="https://via.placeholder.com/150x100"
+            alt="Imagem 3"
+            class="w-full h-24 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="https://via.placeholder.com/150x100"
+            alt="Imagem 4"
+            class="w-full h-24 object-cover rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+
+      <!-- Informações do Imóvel -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Informações</h2>
+        <ul class="space-y-3 text-gray-400">
+          <li><i class="fas fa-bed"></i> 2 quartos</li>
+          <li><i class="fas fa-bath"></i> 1 banheiro</li>
+          <li><i class="fas fa-car"></i> 1 vaga de garagem</li>
+          <li><i class="fas fa-home"></i> Área total: 80 m²</li>
+          <li><i class="fas fa-calendar-alt"></i> Construído em: 2015</li>
+        </ul>
+        <p class="text-yellow-400 font-bold text-3xl mt-6">R$ 1.800/mês</p>
+        <button
+          class="bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-6 rounded-lg font-bold mt-6 w-full flex items-center justify-center"
         >
-          <div>
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">
-              Apartamento Aconchegante - Residencial
-            </h1>
-            <p class="text-gray-400">
-              <i class="fas fa-map-marker-alt"></i> Bairro Centro, Cidade
-              Fictícia
-            </p>
-          </div>
-          <div class="mt-4 lg:mt-0">
-            <span class="flag flag-aluguel">ALUGUEL</span>
-            <span class="flag flag-residencial">RESIDENCIAL</span>
-          </div>
-        </div>
-
-        <!-- Seção Galeria e Informações -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <!-- Galeria de Imagens -->
-          <div class="lg:col-span-2">
-            <img
-              src="https://via.placeholder.com/700x400"
-              alt="Imagem do Imóvel"
-              class="w-full h-96 object-cover rounded-lg shadow-lg"
-            />
-            <div class="grid grid-cols-3 gap-4 mt-4">
-              <img
-                src="https://via.placeholder.com/150x100"
-                alt="Imagem 2"
-                class="w-full h-24 object-cover rounded-lg shadow-md"
-              />
-              <img
-                src="https://via.placeholder.com/150x100"
-                alt="Imagem 3"
-                class="w-full h-24 object-cover rounded-lg shadow-md"
-              />
-              <img
-                src="https://via.placeholder.com/150x100"
-                alt="Imagem 4"
-                class="w-full h-24 object-cover rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-
-          <!-- Informações do Imóvel -->
-          <div>
-            <h2 class="text-2xl font-bold mb-4">Informações</h2>
-            <ul class="space-y-3 text-gray-400">
-              <li><i class="fas fa-bed"></i> 2 quartos</li>
-              <li><i class="fas fa-bath"></i> 1 banheiro</li>
-              <li><i class="fas fa-car"></i> 1 vaga de garagem</li>
-              <li><i class="fas fa-home"></i> Área total: 80 m²</li>
-              <li><i class="fas fa-calendar-alt"></i> Construído em: 2015</li>
-            </ul>
-            <p class="text-yellow-400 font-bold text-3xl mt-6">R$ 1.800/mês</p>
-            <button
-              class="bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-6 rounded-lg font-bold mt-6 w-full flex items-center justify-center"
-            >
-              <i class="fas fa-phone-alt mr-2"></i> Entrar em Contato
-            </button>
-          </div>
-        </div>
-
-        <!-- Descrição do Imóvel -->
-        <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h2 class="text-2xl font-bold mb-4">Descrição do Imóvel</h2>
-          <p class="text-gray-400">
-            Apartamento aconchegante com excelente localização no bairro Centro.
-            Conta com dois quartos bem iluminados, banheiro social, sala ampla,
-            cozinha moderna e uma vaga de garagem coberta. Ideal para famílias
-            que buscam conforto e praticidade no dia a dia.
-          </p>
-        </section>
+          <i class="fas fa-phone-alt mr-2"></i> Entrar em Contato
+        </button>
       </div>
-    </main>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-black text-gray-400 py-6 text-center">
-      <p>&copy; 2025 VaiNaLista. Todos os direitos reservados.</p>
-    </footer>
-  </body>
-</html>
+    <!-- Descrição do Imóvel -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">Descrição do Imóvel</h2>
+      <p class="text-gray-400">
+        Apartamento aconchegante com excelente localização no bairro Centro.
+        Conta com dois quartos bem iluminados, banheiro social, sala ampla,
+        cozinha moderna e uma vaga de garagem coberta. Ideal para famílias que
+        buscam conforto e praticidade no dia a dia.
+      </p>
+    </section>
+  </div>
+</main>
+
+{% include 'front/partials/footer.html' %}

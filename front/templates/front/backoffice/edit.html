@@ -1,0 +1,148 @@
+{% include 'front/backoffice/partials/header.html' %}
+<!-- Formulário de Edição -->
+<main class="py-16">
+  <div class="container mx-auto px-4">
+    <!-- Título -->
+    <h2 class="text-4xl font-bold uppercase text-center mb-8">
+      Editar Anúncio
+    </h2>
+    <p
+      class="text-gray-300 text-center text-lg mb-8 max-w-2xl mx-auto leading-relaxed"
+    >
+      Atualize as informações do seu anúncio abaixo. Certifique-se de que os
+      dados estejam corretos antes de salvar.
+    </p>
+
+    <!-- Formulário -->
+    <form
+      action="#"
+      method="post"
+      class="bg-gray-700 p-8 rounded-lg shadow-lg max-w-2xl mx-auto"
+    >
+      <!-- Campo: Título do Imóvel -->
+      <div class="mb-6">
+        <label for="titulo" class="block text-sm font-medium text-gray-300 mb-2"
+          >Título do Imóvel:</label
+        >
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          required
+          placeholder="Ex: Apartamento no Centro"
+          value="Apartamento no Centro"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        />
+      </div>
+
+      <!-- Campo: Descrição -->
+      <div class="mb-6">
+        <label
+          for="descricao"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Descrição do Imóvel:</label
+        >
+        <textarea
+          id="descricao"
+          name="descricao"
+          rows="6"
+          required
+          placeholder="Descreva seu imóvel de forma detalhada."
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        >
+Apartamento amplo com 3 quartos, 2 banheiros, sala arejada e cozinha moderna.</textarea
+        >
+      </div>
+
+      <!-- Campo: Preço -->
+      <div class="mb-6">
+        <label for="preco" class="block text-sm font-medium text-gray-300 mb-2"
+          >Preço (R$):</label
+        >
+        <input
+          type="number"
+          id="preco"
+          name="preco"
+          required
+          placeholder="Ex: 350000"
+          value="350000"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        />
+      </div>
+
+      <!-- Campo: Categoria -->
+      <div class="mb-6">
+        <label
+          for="categoria"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Categoria:</label
+        >
+        <select
+          id="categoria"
+          name="categoria"
+          required
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        >
+          <option value="apartamento" selected>Apartamento</option>
+          <option value="casa">Casa</option>
+          <option value="comercial">Imóvel Comercial</option>
+          <option value="terreno">Terreno</option>
+        </select>
+      </div>
+
+      <!-- Campo: Endereço -->
+      <div class="mb-6">
+        <label
+          for="endereco"
+          class="block text-sm font-medium text-gray-300 mb-2"
+          >Endereço:</label
+        >
+        <input
+          type="text"
+          id="endereco"
+          name="endereco"
+          required
+          placeholder="Ex: Rua Principal, 123 - Centro"
+          value="Rua Principal, 123 - Centro"
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        />
+      </div>
+
+      <!-- Campo: Status -->
+      <div class="mb-6">
+        <label for="status" class="block text-sm font-medium text-gray-300 mb-2"
+          >Status do Anúncio:</label
+        >
+        <select
+          id="status"
+          name="status"
+          required
+          class="bg-gray-800 text-white p-3 rounded-md w-full border focus:border-yellow-500"
+        >
+          <option value="ativo" selected>Ativo</option>
+          <option value="inativo">Inativo</option>
+        </select>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="flex justify-between items-center mt-8">
+        <!-- Botão Cancelar -->
+        <a
+          href="./painel"
+          class="bg-gray-500 text-white py-3 px-6 rounded-lg font-bold hover:bg-gray-400 transition-all duration-300"
+        >
+          Cancelar
+        </a>
+        <!-- Botão Salvar -->
+        <button
+          type="submit"
+          class="bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold hover:bg-yellow-400 transition-all duration-300"
+        >
+          Salvar Alterações
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+
+{% include 'front/backoffice/partials/footer.html' %}
