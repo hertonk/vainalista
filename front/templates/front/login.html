@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Faça login na sua conta do VaiNaLista para gerenciar seus anúncios e acessar recursos exclusivos."
+    />
+    <title>Login - VaiNaLista</title>
+
+    <!-- Importando TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Personalização do logo */
+      .logo {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-b from-gray-900 to-black text-white font-sans min-h-screen flex items-center justify-center"
+  >
+    <!-- Container Principal -->
+    <div class="bg-gray-800 max-w-md mx-auto p-8 rounded-lg shadow-lg">
+      <!-- Logo centralizada -->
+      <h1 class="logo uppercase text-center">Vai&nbsp;Na&nbsp;Lista</h1>
+
+      <!-- Título -->
+      <h2 class="text-2xl text-yellow-500 font-bold my-6 text-center">Login</h2>
+
+      <!-- Formulário -->
+      <form action="#" method="POST">
+        <!-- E-mail -->
+        <div class="mb-6">
+          <label
+            for="email"
+            class="block text-sm font-medium text-gray-300 mb-2"
+            >E-mail:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Digite seu e-mail"
+            class="bg-gray-700 text-white p-3 rounded-md w-full border"
+          />
+        </div>
+
+        <!-- Senha -->
+        <div class="mb-6">
+          <label
+            for="password"
+            class="block text-sm font-medium text-gray-300 mb-2"
+            >Senha:</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Digite sua senha"
+            class="bg-gray-700 text-white p-3 rounded-md w-full border"
+          />
+        </div>
+
+        <!-- Opções de Lembrar e Esqueci a Senha -->
+        <div class="flex items-center justify-between mb-6">
+          <label class="flex items-center text-sm text-gray-300">
+            <input
+              type="checkbox"
+              name="remember"
+              class="mr-2 rounded bg-gray-700 text-yellow-500 border"
+            />
+            Lembrar de mim
+          </label>
+          <a href="#" class="text-sm text-yellow-500 hover:underline"
+            >Esqueci minha senha</a
+          >
+        </div>
+
+        <!-- Botão de Login -->
+        <button
+          type="submit"
+          class="w-full bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold shadow-lg hover:bg-yellow-400 transition-all duration-300"
+        >
+          Entrar
+        </button>
+      </form>
+
+      <!-- Registro -->
+      <p class="text-center text-gray-400 mt-6 text-sm">
+        Não tem uma conta?
+        <a href="#" class="text-yellow-500 hover:underline">Cadastre-se</a>
+      </p>
+    </div>
+  </body>
+</html>

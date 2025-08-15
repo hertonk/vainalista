@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resultados de busca no VaiNaLista." />
+    <title>Resultados da Busca - VAI NA LISTA - Listou, achou!</title>
+
+    <!-- Importando TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Importando Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      .logo {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+      }
+
+      .flag {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-right: 0.5rem;
+      }
+
+      .flag-aluguel {
+        background-color: #3b82f6;
+        color: white;
+      }
+
+      .flag-venda {
+        background-color: #dc2626;
+        color: white;
+      }
+
+      .flag-residencial {
+        background-color: #16a34a;
+        color: white;
+      }
+
+      .flag-comercial {
+        background-color: #f59e0b;
+        color: black;
+      }
+
+      .filter-toggle {
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 50;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Cabeçalho -->
+    <header class="bg-black py-6 shadow-md">
+      <div class="container mx-auto text-center">
+        <h1 class="logo uppercase">Vai&nbsp;Na&nbsp;Lista</h1>
+      </div>
+    </header>
+
+    <!-- Botão para mostrar/esconder filtros no mobile -->
+    <button
+      id="filterToggle"
+      class="lg:hidden fixed filter-toggle bg-yellow-500 text-black py-2 px-6 rounded-full font-bold shadow-lg flex items-center"
+    >
+      <i class="fas fa-sliders-h mr-2"></i> Filtros
+    </button>
+
+    <!-- Conteúdo Principal -->
+    <main class="bg-gray-900 py-12 flex">
+      <!-- Barra de Filtros -->
+      <aside
+        id="sidebar"
+        class="fixed inset-y-0 left-0 lg:static bg-gray-800 lg:w-1/4 w-64 p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+      >
+        <h2 class="text-2xl font-bold mb-6">Filtros</h2>
+
+        <!-- Filtro Finalidade -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Finalidade</h3>
+          <div>
+            <label class="block mb-2">
+              <input
+                type="radio"
+                name="finalidade"
+                value="residencial"
+                class="mr-2"
+              />
+              Residencial
+            </label>
+            <label class="block mb-2">
+              <input
+                type="radio"
+                name="finalidade"
+                value="comercial"
+                class="mr-2"
+              />
+              Comercial
+            </label>
+          </div>
+        </div>
+
+        <!-- Filtro Para -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Para</h3>
+          <div>
+            <label class="block mb-2">
+              <input type="radio" name="para" value="vender" class="mr-2" />
+              Vender
+            </label>
+            <label class="block mb-2">
+              <input type="radio" name="para" value="alugar" class="mr-2" />
+              Alugar
+            </label>
+          </div>
+        </div>
+
+        <!-- Filtro Tipo -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Tipo</h3>
+          <div>
+            <label class="block mb-2">
+              <input type="checkbox" name="tipo" value="casa" class="mr-2" />
+              Casa
+            </label>
+            <label class="block mb-2">
+              <input
+                type="checkbox"
+                name="tipo"
+                value="apartamento"
+                class="mr-2"
+              />
+              Apartamento
+            </label>
+            <label class="block mb-2">
+              <input
+                type="checkbox"
+                name="tipo"
+                value="pronto-comercial"
+                class="mr-2"
+              />
+              Pronto Comercial
+            </label>
+            <label class="block mb-2">
+              <input type="checkbox" name="tipo" value="terreno" class="mr-2" />
+              Terreno
+            </label>
+            <label class="block mb-2">
+              <input type="checkbox" name="tipo" value="galpao" class="mr-2" />
+              Galpão
+            </label>
+          </div>
+        </div>
+
+        <!-- Filtro Bairro -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-3">Bairro</h3>
+          <div>
+            <label class="block mb-2">
+              <input
+                type="checkbox"
+                name="bairro"
+                value="centro"
+                class="mr-2"
+              />
+              Centro
+            </label>
+            <label class="block mb-2">
+              <input type="checkbox" name="bairro" value="dner" class="mr-2" />
+              DNER
+            </label>
+            <label class="block mb-2">
+              <input type="checkbox" name="bairro" value="cohab" class="mr-2" />
+              Cohab
+            </label>
+          </div>
+        </div>
+
+        <!-- Botão de Aplicar Filtros -->
+        <button
+          type="button"
+          class="bg-yellow-500 hover:bg-yellow-600 text-black w-full py-3 rounded font-bold"
+        >
+          Aplicar Filtros
+        </button>
+      </aside>
+
+      <!-- Resultados -->
+      <section class="flex-1 lg:pl-8 pl-6">
+        <!-- Título Alinhado à Esquerda -->
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Resultados da Busca</h2>
+
+        <!-- Grid de Imóveis -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card de Resultado -->
+          <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Imagem do Imóvel"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <div class="mb-3">
+                <span class="flag flag-aluguel">ALUGUEL</span>
+                <span class="flag flag-residencial">RESIDENCIAL</span>
+              </div>
+              <h3 class="text-xl font-bold">Apartamento Aconchegante</h3>
+              <p class="text-gray-400 mt-2">
+                Bairro Centro - 2 quartos, vaga de garagem
+              </p>
+              <p class="text-yellow-400 font-bold mt-3">R$ 1.800/mês</p>
+              <a
+                href="./detalhes-do-imovel"
+                class="block mt-4 bg-yellow-500 hover:bg-yellow-600 text-center py-2 rounded text-black font-bold flex items-center justify-center"
+              >
+                <i class="fas fa-info-circle mr-2"></i> Ver Detalhes
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-black text-gray-400 py-6 text-center">
+      <p>&copy; 2025 VaiNaLista. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      // Mostrar/esconder filtros no mobile
+      const filterToggle = document.getElementById("filterToggle");
+      const sidebar = document.getElementById("sidebar");
+
+      filterToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+      });
+    </script>
+  </body>
+</html>
